@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "core";
+
+package core;
+
+import "blackhole/blackhole.proto";
+
+enum TaskStatus {
+    Waiting = 0;
+    Working = 1;
+    Done = 2;
+}
+
+message Task {
+        string user_id = 1;
+        blackhole.TaskKind kind = 2;
+        int64 timestamp = 3;
+        string namespace = 4;
+        blackhole.PutTask task = 5;
+        TaskStatus status = 6;
+}

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option go_package = "celestial";
+
+package celestial;
+
+import "core/core.proto";
+
+//Service
+service CelestialService{
+        rpc List(ListReq) returns(ListResp){}
+        rpc Mutate(MutateReq) returns(MutateResp){}
+}
+
+//Enumerations
+enum ReqKind {
+  SECRETS = 0;
+  CONFIGS = 1;
+  ACTIONS = 2;
+  NAMESPACES = 3;
+}
+
+
+//Other messages
+message KV {
+        string key = 1;
+        string value = 2;
+}
+
+
+
+// List messages
+message ListReq {
+        ReqKind kind = 1;
+        repeated KV extras = 2;
+}
+
+message ListResp {
+        string region_id = 1;
+        string cluster_id = 2;
+        string node_id = 3;
+        repeated KV data = 4;
+        repeated KV extras = 5;
+        string error = 6;
+}
+
+message MutateReq {
+        core.Task mutate = 1;
+}
+
+// Mutate messages
+message MutateResp{
+        string error = 1;
+}
