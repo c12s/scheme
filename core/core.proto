@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "core";
+option go_package = "github.com/c12s/scheme/core";
 
 package core;
 

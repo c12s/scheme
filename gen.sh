@@ -1,4 +1,5 @@
-protoc blackhole/blackhole.proto -I. --go_out=plugin=grpc:.
-protoc core/core.proto -I. --go_out=plugin=grpc:.
-protoc celestial/celestial.proto -I. --go_out=plugin=grpc:.
+protoc -I. --go_out=plugins=grpc:$GOPATH/src/. celestial/celestial.proto
+protoc -I. --go_out=plugins=grpc:$GOPATH/src/. blackhole/blackhole.proto
+protoc -I. --go_out=plugins=grpc:$GOPATH/src/. core/core.proto
+
 echo "Generating done."
