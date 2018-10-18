@@ -36,8 +36,8 @@ enum CompareKind {
 
 // Request helper messages
 message Strategy {
-        string type = 1;
-        StrategyKind kind = 2;
+        StrategyKind type = 1;
+        string kind = 2;
 }
 
 message Selector {
