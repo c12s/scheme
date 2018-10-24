@@ -11,26 +11,30 @@ service BlackHoleService{
 
 // Enums
 enum TaskKind {
-    CONFIGS = 0;
-    ACTIONS = 1;
-    SECRETS = 2;
-    NAMESPACES = 3;
+    NO_VALUE_TASK = 0;
+    CONFIGS = 1;
+    ACTIONS = 2;
+    SECRETS = 3;
+    NAMESPACES = 4;
 }
 
 enum PayloadKind {
-    FILE = 0;
-    ENV = 1;
-    ACTION = 2;
+    NO_VALUE_PAYLOAD = 0;
+    FILE = 1;
+    ENV = 2;
+    ACTION = 3;
 }
 
 enum StrategyKind {
-    AT_ONCE = 0;
-    ROLLING_UPDATE = 1;
+    NO_VALUE_STRATEGY = 0;
+    AT_ONCE = 1;
+    ROLLING_UPDATE = 2;
 }
 
 enum CompareKind {
-    ALL = 0;
-    ANY = 1;
+    NO_VALUE_COMPARE = 0;
+    ALL = 1;
+    ANY = 2;
 }
 
 

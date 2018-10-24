@@ -12,6 +12,10 @@ enum TaskStatus {
     Done = 2;
 }
 
+message KV {
+        map<string, string> extras = 1;
+}
+
 message Task {
         string user_id = 1;
         blackhole.TaskKind kind = 2;
@@ -19,4 +23,5 @@ message Task {
         string namespace = 4;
         blackhole.PutTask task = 5;
         TaskStatus status = 6;
+        map<string, string> extras = 7;
 }

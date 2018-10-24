@@ -26,11 +26,15 @@ message ListReq {
         map<string, string> extras = 2;
 }
 
+message Data {
+        map<string, string> data = 1;
+}
+
 message ListResp {
         string region_id = 1;
         string cluster_id = 2;
         string node_id = 3;
-        map<string, string> data = 4;
+        repeated Data data = 4;
         map<string, string> extras = 5;
         string error = 6;
 }
