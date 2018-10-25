@@ -13,12 +13,13 @@ enum TaskStatus {
 }
 
 message UndoneKV {
-        map<string, KV> undone = 1;
+        map<string, KV> undone = 1; 
 }
 
 message KV {
         map<string, string> extras = 1;
         int64 timestamp = 2;
+        repeated string index = 3;
 }
 
 message Task {
