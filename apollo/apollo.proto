@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/c12s/scheme/apollo";
+
+package apollo;
+
+//Service
+service ApolloService{
+        rpc GetToken(GetReq) returns(GetResp){}
+}
+
+message GetReq {
+        string user = 1;
+}
+
+message GetResp {
+        string token = 1;
+}
