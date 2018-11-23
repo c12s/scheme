@@ -29,6 +29,7 @@ enum StrategyKind {
     NO_VALUE_STRATEGY = 0;
     AT_ONCE = 1;
     ROLLING_UPDATE = 2;
+    CANARY = 3;
 }
 
 enum CompareKind {
@@ -42,6 +43,7 @@ enum CompareKind {
 message Strategy {
         StrategyKind type = 1;
         string kind = 2;
+        string interval = 3;
 }
 
 message Selector {
