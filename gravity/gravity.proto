@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/c12s/scheme/gravity";
+
+package gravity;
+
+import "celestial/celestial.proto";
+
+//Service
+service GravityService{
+        rpc PutTask(PutReq) returns(PutResp){}
+}
+
+message PutReq {
+        string key = 1;
+        celestial.MutateReq task = 2;
+}
+
+message PutResp {
+        string token = 1;
+}

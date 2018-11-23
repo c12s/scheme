@@ -16,10 +16,16 @@ message UndoneKV {
         map<string, KV> undone = 1; 
 }
 
+message KVData {
+        string value = 1;
+        string status = 2;
+}
+
 message KV {
-        map<string, string> extras = 1;
+        map<string, KVData> extras = 1;
         int64 timestamp = 2;
         repeated string index = 3;
+        string user_id = 4;
 }
 
 message Task {
