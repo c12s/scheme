@@ -5,6 +5,7 @@ option go_package = "github.com/c12s/scheme/gravity";
 package gravity;
 
 import "celestial/celestial.proto";
+import "blackhole/blackhole.proto";
 
 //Service
 service GravityService{
@@ -18,4 +19,14 @@ message PutReq {
 
 message PutResp {
         string token = 1;
+}
+
+message FlushTaskPart {
+        repeated string nodes = 1;
+}
+
+message FlushTask {
+        repeated FlushTaskPart parts = 1;
+        blackhole.Payload payload = 2;
+        blackhole.Strategy strategy = 3;
 }
