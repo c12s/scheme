@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "github.com/c12s/scheme/flusher";
+
+package flusher;
+
+import "blackhole/blackhole.proto";
+
+message FlushPush {
+        repeated blackhole.Payload payload = 1;
+}
