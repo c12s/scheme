@@ -27,6 +27,6 @@ message FlushTaskPart {
 
 message FlushTask {
         repeated FlushTaskPart parts = 1;
-        blackhole.Payload payload = 2;
+        repeated blackhole.Payload payload = 2;
         blackhole.Strategy strategy = 3;
 }
