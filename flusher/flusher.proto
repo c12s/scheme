@@ -6,6 +6,23 @@ package flusher;
 
 import "blackhole/blackhole.proto";
 
-message FlushPush {
-        repeated blackhole.Payload payload = 1;
+message Event {
+        string taskKey = 1;
+        string kind = 2;
+        repeated blackhole.Payload payload = 3;
+}
+
+message Update {
+        string taskKey = 1;
+        string kind = 2;
+        string node = 3;
+}
+
+message Error {
+        string taskKey = 1;
+        string kind = 2;
+        string node = 3;
+        string message = 4;
+        int64 timestamp = 5;
+        string level = 6;
 }

@@ -7,6 +7,15 @@ package apollo;
 //Service
 service ApolloService{
         rpc GetToken(GetReq) returns(GetResp){}
+        rpc Auth(AuthOpt) returns(AuthResp){}
+}
+
+message AuthOpt {
+        repeated string data = 1;
+}
+
+message AuthResp {
+        bool value = 1;
 }
 
 message GetReq {
