@@ -41,6 +41,7 @@ message ListResp {
 
 message MutateReq {
         core.Task mutate = 1;
+        repeated string index = 2;
 }
 
 // Mutate messages

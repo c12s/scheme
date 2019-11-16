@@ -15,6 +15,7 @@ service GravityService{
 message PutReq {
         string key = 1;
         celestial.MutateReq task = 2;
+        string taskKey = 3;
 }
 
 message PutResp {
@@ -29,4 +30,5 @@ message FlushTask {
         repeated FlushTaskPart parts = 1;
         repeated blackhole.Payload payload = 2;
         blackhole.Strategy strategy = 3;
+        string taskKey = 4;
 }
