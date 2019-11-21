@@ -16,6 +16,7 @@ message AuthOpt {
 
 message AuthResp {
         bool value = 1;
+        map<string, string> data = 2;
 }
 
 message GetReq {
