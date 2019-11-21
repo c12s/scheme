@@ -11,7 +11,7 @@ service ApolloService{
 }
 
 message AuthOpt {
-        repeated string data = 1;
+        map<string, string> data = 1;
 }
 
 message AuthResp {
