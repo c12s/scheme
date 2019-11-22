@@ -10,8 +10,13 @@ service ApolloService{
         rpc Auth(AuthOpt) returns(AuthResp){}
 }
 
+message OptExtras {
+        repeated string data = 1;
+}
+
 message AuthOpt {
         map<string, string> data = 1;
+        map<string, OptExtras> extras = 2;
 }
 
 message AuthResp {
