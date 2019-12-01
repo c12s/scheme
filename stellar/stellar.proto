@@ -23,9 +23,13 @@ message TracePart {
         map<string, string> tags = 3;
 }
 
-message ListReq {}
+message ListReq {
+        map<string, string> query = 1;
+}
 
-message ListResp {}
+message ListResp {
+        repeated GetResp traces = 1;
+}
 
 message GetReq {
         string traceId = 1;
