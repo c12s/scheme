@@ -41,3 +41,7 @@ message GetReq {
 message GetResp {
         repeated Span trace = 1;
 }
+
+message Tags {
+        map<string, string> tags = 1;
+}
