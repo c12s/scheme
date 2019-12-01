@@ -17,7 +17,7 @@ message SpanContext {
         map<string, string> baggage = 5; 
 }
 
-message TracePart {
+message Span {
         SpanContext spanContext = 1;
         string name = 2;
         map<string, string> logs = 3;
@@ -39,5 +39,5 @@ message GetReq {
 }
 
 message GetResp {
-        repeated TracePart trace = 1;
+        repeated Span trace = 1;
 }
