@@ -12,8 +12,8 @@ service StellarService{
 
 message SpanContext {
         string traceId = 1;
-        int64 spanId = 2; 
-        int64 parrentSpanId = 4;
+        string spanId = 3; 
+        string parrentSpanId = 4;
         map<string, string> baggage = 5; 
 }
 
