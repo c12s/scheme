@@ -26,6 +26,10 @@ message Span {
         int64 endTime = 6;
 }
 
+message LogBatch {
+        repeated Span batch = 1;
+}
+
 message ListReq {
         map<string, string> query = 1;
 }
