@@ -5,17 +5,20 @@ option go_package = "github.com/c12s/scheme/flusher";
 package flusher;
 
 import "blackhole/blackhole.proto";
+import "stellar/stellar.proto";
 
 message Event {
         string taskKey = 1;
         string kind = 2;
         repeated blackhole.Payload payload = 3;
+        stellar.SpanContext spanContext = 4;
 }
 
 message Update {
         string taskKey = 1;
         string kind = 2;
         string node = 3;
+        stellar.SpanContext spanContext = 4;
 }
 
 message Error {

@@ -6,6 +6,7 @@ package gravity;
 
 import "celestial/celestial.proto";
 import "blackhole/blackhole.proto";
+import "stellar/stellar.proto";
 
 //Service
 service GravityService{
@@ -16,6 +17,7 @@ message PutReq {
         string key = 1;
         celestial.MutateReq task = 2;
         string taskKey = 3;
+        stellar.SpanContext spanContext = 4;
 }
 
 message PutResp {
