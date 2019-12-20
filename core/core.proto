@@ -5,6 +5,7 @@ option go_package = "github.com/c12s/scheme/core";
 package core;
 
 import "blackhole/blackhole.proto";
+import "stellar/stellar.proto";
 
 enum TaskStatus {
     Waiting = 0;
@@ -36,4 +37,5 @@ message Task {
         blackhole.PutTask task = 5;
         TaskStatus status = 6;
         map<string, string> extras = 7;
+        stellar.SpanContext spanContext = 8;
 }
