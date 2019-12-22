@@ -38,4 +38,5 @@ message Task {
         TaskStatus status = 6;
         map<string, string> extras = 7;
         stellar.SpanContext spanContext = 8;
+        string token = 9;
 }
