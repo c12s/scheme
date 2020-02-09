@@ -4,10 +4,14 @@ option go_package = "github.com/c12s/scheme/apollo";
 
 package apollo;
 
+import "celestial/celestial.proto";
+
 //Service
 service ApolloService{
         rpc GetToken(GetReq) returns(GetResp){}
         rpc Auth(AuthOpt) returns(AuthResp){}
+        rpc List(celestial.ListReq) returns(celestial.ListResp){}
+        rpc Mutate(celestial.MutateReq) returns(celestial.MutateResp){}
 }
 
 message OptExtras {
