@@ -35,3 +35,7 @@ message GetReq {
 message GetResp {
         string token = 1;
 }
+
+message ACL {
+        repeated string token = 1;
+}
