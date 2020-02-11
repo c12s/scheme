@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "github.com/c12s/scheme/meridian";
+
+package meridian;
+
+import "celestial/celestial.proto";
+
+//Service
+service MeridianService{
+        rpc List(celestial.ListReq) returns(celestial.ListResp){}
+        rpc Mutate(celestial.MutateReq) returns(celestial.MutateResp){}
+        rpc Exists(NSReq) returns(NSResp){}
+}
+
+message NSReq {
+        string name = 1;
+        map<string, string> extras = 2;
+}
+
+message NSResp {
+        map<string, string> extras = 1;
+}
