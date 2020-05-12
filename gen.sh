@@ -6,4 +6,5 @@ protoc -I. --go_out=plugins=grpc:$GOPATH/src/. gravity/gravity.proto
 protoc -I. --go_out=plugins=grpc:$GOPATH/src/. stellar/stellar.proto
 protoc -I. --go_out=plugins=grpc:$GOPATH/src/. flusher/flusher.proto
 protoc -I. --go_out=plugins=grpc:$GOPATH/src/. meridian/meridian.proto
+protoc -I. --go_out=plugins=grpc:$GOPATH/src/. magnetar/magnetar.proto
 echo "Generating done."

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "github.com/c12s/scheme/magnetar";
+
+package magnetar;
+
+//Service
+service MagnetarService{
+        rpc Reserve(ReserveMsg) returns(ReserveRsp){}
+        rpc List(ReserveMsg) returns(ListRsp){}
+}
+
+message ReserveMsg {
+        repeated string ids = 1;
+}
+
+message ReserveRsp {
+        int32 taken = 1;
+}
+
+message ListRsp {
+       map<string, DataMsg> data = 1;
+}
+
+message DataMsg {
+        map<string, string> data = 1;
+}
