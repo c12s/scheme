@@ -8,6 +8,7 @@ package magnetar;
 service MagnetarService{
         rpc Reserve(ReserveMsg) returns(ReserveRsp){}
         rpc List(ReserveMsg) returns(ListRsp){}
+        rpc Free(ReserveMsg) returns(ReserveRsp){}
 }
 
 message ReserveMsg {
@@ -16,6 +17,7 @@ message ReserveMsg {
 
 message ReserveRsp {
         int32 taken = 1;
+        repeated string excluded = 2;
 }
 
 message ListRsp {
