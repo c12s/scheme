@@ -19,6 +19,7 @@ enum ReqKind {
   ACTIONS = 2;
   NAMESPACES = 3;
   ROLES = 4;
+  TOPOLOGY = 5;
 }
 
 // List messages
