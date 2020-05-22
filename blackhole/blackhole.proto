@@ -17,6 +17,7 @@ enum TaskKind {
     SECRETS = 3;
     NAMESPACES = 4;
     ROLES = 5;
+    TOPOLOGY = 6;
 }
 
 enum PayloadKind {
