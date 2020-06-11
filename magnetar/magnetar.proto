@@ -12,7 +12,8 @@ service MagnetarService{
 }
 
 message ReserveMsg {
-        repeated string ids = 1;
+        string metricttl = 1;
+        repeated string ids = 2;
 }
 
 message ReserveRsp {
@@ -26,4 +27,8 @@ message ListRsp {
 
 message DataMsg {
         map<string, string> data = 1;
+}
+
+message EventMsg {
+        map<string, DataMsg> data = 1;
 }
