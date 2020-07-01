@@ -9,12 +9,13 @@ service MagnetarService{
         rpc Reserve(ReserveMsg) returns(ReserveRsp){}
         rpc List(ReserveMsg) returns(ListRsp){}
         rpc Free(ReserveMsg) returns(ReserveRsp){}
-        rpc Query(DataMsg) returns(ListRsp){}
+        rpc Query(QueryMsg) returns(ListRsp){}
 }
 
 message ReserveMsg {
-        string metricttl = 1;
-        repeated string ids = 2;
+        string userid = 1;
+        string metricttl = 2;
+        repeated string ids = 3;
 }
 
 message ReserveRsp {
@@ -32,4 +33,9 @@ message DataMsg {
 
 message EventMsg {
         map<string, DataMsg> data = 1;
+}
+
+message QueryMsg {
+        string userid = 1;
+        DataMsg data = 2;
 }
